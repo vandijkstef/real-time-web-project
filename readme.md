@@ -73,11 +73,11 @@ Data fetched from API's is cached on the server using MongoDB. Any data request 
 Currently, no contributions are accepted. However, you are free to fork the project and build on it.
 
 ## Licence
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+<!-- How about a license here?  (or is it a licence?) 🤷 -->
 This project is copyleft, all wrongs reversed. Have fun! *Note: This might not be true for dependencies*
 
 ## Acknowledgments
-* Huge shoutout to the Coffee Bar on the HvA ☕️
+* ☕️
 
 <!-- * Create a "live" web app which reflects changes to the back-end data model in reactive front-end views, using real-time, event-based, messaging technologies like sockets or server-sent-events. -->
 <!-- * Describe their work in a professional readme with insightful diagrams showing the life cycle of their data. -->
