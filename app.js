@@ -2,14 +2,15 @@ require('dotenv').config();
 
 const createError = require('http-errors');
 const express = require('express');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 
-const mongo = require('mongodb');
-const mongoClient = mongo.MongoClient;
-const url = 'mongodb://localhost:27017/';
+// const mongo = require('mongodb');
+// const mongoClient = mongo.MongoClient;
+const mongUrl = 'mongodb://localhost:27017/';
 
 // mongoClient.connect(url, (err, db) => {
 // 	if (err) throw err;
@@ -23,15 +24,12 @@ const url = 'mongodb://localhost:27017/';
 // 	});
 // });
 
-const indexRouter = require('./routes/index');
-
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -43,7 +41,17 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use(session({
+	secret: 'oiVaidvE93',
+	store: new MongoStore({
+		url: mongUrl
+	}),
+	saveUninitialized: true,
+	resave: false
+}));
+
+app.use('/', require('./routes/index'));
+app.use('/repo', require('./routes/repos'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
