@@ -3,20 +3,27 @@
   "version": "0.0.1",
   "description": "WAFS 3.0",
   "author": "Stef van Dijk",
+  "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "watch": "nodemon ./bin/www -i sessions/ -i data/",
+    "watch": "nodemon ./bin/www -i data/",
     "mongo": "mongod --dbpath ./data/"
   },
   "dependencies": {
+    "connect-mongo": "^2.0.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^5.0.1",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
+    "express-session": "^1.15.6",
     "http-errors": "~1.6.2",
     "mongodb": "^3.0.6",
     "morgan": "~1.9.0",
     "node-sass-middleware": "0.11.0"
+  },
+  "nodemonConfig": {
+    "ignore": ["data/*"],
+    "delay": "2000"
   }
 }
