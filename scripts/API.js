@@ -1,5 +1,6 @@
 const request = require('request');
 
+// Base API class
 class API {
 	constructor(server) {
 		this.server = server;

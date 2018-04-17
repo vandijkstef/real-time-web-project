@@ -25,7 +25,7 @@ After cloning the project, install using:
 npm install
 ```
 
-The app requires no building.
+The app requires no building. SCSS is compiled on runtime
 
 Before starting the application, make sure MongoDB is running:
 ```
@@ -44,20 +44,30 @@ npm run watch
 ### Deployment
 The root of the project contains an `.env-example` file. Rename this to `.env` and set the variables for your envoirement.
 
-## Features
-<!-- ...but how does one use this project? What are its features 🤔 -->
+Additional settings are defined in `.json` files in the root. This to not create a complete back-end for the app.
+
+## Features (Wishlist)
+This project tries to be a social platform around the CMDA Github organisation. Soon to be released features:
+- 🔍 Github organisation Repo explorer 
+- 🔎 Repo forks explorer 
+- 💯 Awesome relevant data and numbers
+- 🔢 Even more irrelevant data and numbers 
+- 🔏 Github user login through oAuth
+- 🍌 Fully featured profile page
+- 👋 Online status display (for logged in users) 
+- 💬 Chat system 
+- #️⃣  Slack Integration
+- 🐦 Twitter things? 
+- 😵 Possibly class management stuff... 
 
 ## API's
+### Github
+Github is our main data source
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 
 ## Server Caching (DB)
-<!-- Where do the 0️⃣s and 1️⃣s live in your project? What db system are you using?-->
 Data fetched from API's is cached on the server using MongoDB. Any data request within the system will first try to fetch that from the database. In the case the data doesn't exsist, or is invalid due to cache timeout, a (new) request to the API is made. That data is first stored, then fetched again from the database.
 ![Data request](./doc/data-request.JPG)
-
-
-## Wishlist
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
 ## Contributing
 Currently, no contributions are accepted. However, you are free to fork the project and build on it.
@@ -66,18 +76,24 @@ Currently, no contributions are accepted. However, you are free to fork the proj
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
 This project is copyleft, all wrongs reversed. Have fun! *Note: This might not be true for dependencies*
 
-
 ## Acknowledgments
 * Huge shoutout to the Coffee Bar on the HvA ☕️
-
 
 <!-- * Create a "live" web app which reflects changes to the back-end data model in reactive front-end views, using real-time, event-based, messaging technologies like sockets or server-sent-events. -->
 <!-- * Describe their work in a professional readme with insightful diagrams showing the life cycle of their data. -->
 
-
 ---
 
-- Get all repo's back -> mongo
-- Pull users from those repos -> mongo
-- Create (oauth) login
-- Smth, smth...
+- Keep track of api calls in DB, so we can decide if we wanna do deep calls or not
+
+- Test if my update method actually updates and doesn't remove extra set variables
+
+- So...
+- To get all other users, we need to fetch the forks first
+	- Then we possibly need to do a deeper call to actually fetch those users?
+	- Or can we expand?
+	- Don't I want to get all the data from the expand method?
+- Then I can build a users page
+- I guess I wanna run some API calls on startup so we get users, even on a clear database
+- Wait, UserStore.FetchAll should fix that
+	- Oh, we might not wanna return sensitive data to the template engine

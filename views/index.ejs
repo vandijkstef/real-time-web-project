@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+	<head>
+		<title><%= title %></title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+	</head>
+	<body>
+		<header>
+			<h1><%= title %></h1>
+			<p>Welcome to <%= title %></p>
+		</header>
+	  	<main>
+		<% if (repos) { %>
+			<% for (let i = 0; i < repos.length; i++) { %>
+				<div>
+					<p><%= repos[i].name %></p>
+				</div>
+			<% } %>
+		<% } %>
+		</main>
   </body>
 </html>

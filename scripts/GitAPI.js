@@ -1,5 +1,6 @@
 const API = require('./API.js');
 
+// Class to interact with the Github API
 class GitAPI extends API {
 	constructor() {
 		super('https://api.github.com');

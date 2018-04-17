@@ -1,0 +1,38 @@
+[
+	{
+		"id": "wafs",
+		"repos": ["web-app-from-scratch"]
+	},
+	{
+		"id": "cssttr",
+		"repos": ["css-to-the-rescue"]
+	},
+	{
+		"id": "pm",
+		"repos": ["performance-matters-bootstrap", "performance-matters-server-side", "performance-matters-checklist"]
+	},
+	{
+		"id": "bt",
+		"repos": ["browser-technologies"]
+	},
+	{
+		"id": "rtw",
+		"repos": ["real-time-web", "real-time-web-project"]
+	},
+	{
+		"id": "wd",
+		"repos": ["web-design"]
+	},
+	{
+		"id": "pw1",
+		"repos": ["project1-quick-hack-prototype"]
+	},
+	{
+		"id": "pw2",
+		"repos": []
+	},
+	{
+		"id": "pw3",
+		"repos": []
+	}
+]
