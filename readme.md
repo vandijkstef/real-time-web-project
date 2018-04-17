@@ -15,15 +15,19 @@ This project assumes you are familiar with NodeJS (`9.11.1`) and NPM (`5.6.0`), 
 ### Code style
 All JS should conform to the eslint config thats included. Please make sure ESlint is functional in your code editor and the supplied config is being used.
 
+Any data object handled in the system should be prefixed with its origin:
+- `data` for MongoDB (`dataRepos`)
+- `git` for Github (`gitRepos`)
+
 ### Installation and running
 After cloning the project, install using:
 ```
 npm install
 ```
 
-The app currently requires no building.
+The app requires no building.
 
-Before starting the application, make sure MongoDB is started:
+Before starting the application, make sure MongoDB is running:
 ```
 npm run mongo
 ```
@@ -38,8 +42,7 @@ npm run watch
 ```
 
 ### Deployment
-<!-- Hmm, lets tell something about our .env file -->
-
+The root of the project contains an `.env-example` file. Rename this to `.env` and set the variables for your envoirement.
 
 ## Features
 <!-- ...but how does one use this project? What are its features 🤔 -->
@@ -49,6 +52,9 @@ npm run watch
 
 ## Server Caching (DB)
 <!-- Where do the 0️⃣s and 1️⃣s live in your project? What db system are you using?-->
+Data fetched from API's is cached on the server using MongoDB. Any data request within the system will first try to fetch that from the database. In the case the data doesn't exsist, or is invalid due to cache timeout, a (new) request to the API is made. That data is first stored, then fetched again from the database.
+![Data request](./doc/data-request.JPG)
+
 
 ## Wishlist
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->

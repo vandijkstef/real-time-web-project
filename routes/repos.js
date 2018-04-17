@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 	// So, prefered syntax;
 	const repoStore = new RepoStore();
 	repoStore.GetAll((data) => {
-		console.log(data); // This should always be the repo's. Like... always
+		// console.log(data); // This should always be the repo's. Like... always
 		res.render('index', { title: 'Repos' });
 	});
 

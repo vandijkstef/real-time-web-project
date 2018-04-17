@@ -10,6 +10,7 @@
     "mongo": "mongod --dbpath ./data/"
   },
   "dependencies": {
+    "async": "^2.6.0",
     "connect-mongo": "^2.0.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -23,7 +24,9 @@
     "node-sass-middleware": "0.11.0"
   },
   "nodemonConfig": {
-    "ignore": ["data/*"],
+    "ignore": [
+      "data/*"
+    ],
     "delay": "2000"
   }
 }

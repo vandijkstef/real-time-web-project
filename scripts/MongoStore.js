@@ -45,7 +45,6 @@ class MongoStore {
 			const dbo = db.db(this.DB);
 			dbo.collection(collection).insertMany(data, (err, res) => {
 				if (err) throw err;
-				console.log(res);
 				db.close();
 				return callback(res);
 			});
