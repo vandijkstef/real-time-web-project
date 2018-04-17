@@ -67,3 +67,11 @@ This project is copyleft, all wrongs reversed. Have fun! *Note: This might not b
 
 <!-- * Create a "live" web app which reflects changes to the back-end data model in reactive front-end views, using real-time, event-based, messaging technologies like sockets or server-sent-events. -->
 <!-- * Describe their work in a professional readme with insightful diagrams showing the life cycle of their data. -->
+
+
+---
+
+- Get all repo's back -> mongo
+- Pull users from those repos -> mongo
+- Create (oauth) login
+- Smth, smth...
