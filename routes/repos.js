@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
 	const repoStore = new RepoStore();
 	repoStore.GetAll((dataRepos) => {
 		// console.log(data); // This should always be the repo's. Like... always, else we killed the app
-		res.render('index', { title: 'Repos', repos: dataRepos });
+		res.render('repos', { title: 'Repos', repos: dataRepos });
 	});
 
 });

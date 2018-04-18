@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title><%= title %></title>
-		<link rel='stylesheet' href='/stylesheets/style.css' />
-	</head>
-	<body>
-		<header>
-			<h1><%= title %></h1>
-			<p>Welcome to <%= title %></p>
-		</header>
-	  	<main>
-		<% if (repos) { %>
-			<% for (let i = 0; i < repos.length; i++) { %>
-				<div>
-					<p><%= repos[i].name %></p>
-				</div>
-			<% } %>
+<%- include _header %>
+<div class="rotatedNav">
+	<nav class="index">
+		<% if (locals.user) { %>
+			<a href="/class">Class</a>
+			<a href="/profile">Profile</a>
+		<% } else { %>
+			<a href="/repo">Archive</a>
+			<a href="/login">Login</a>
 		<% } %>
-		</main>
-  </body>
-</html>
+	</nav>
+</div>
+<%- include _footer %>

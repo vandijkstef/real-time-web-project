@@ -1,8 +1,42 @@
+$brown: rgb(71, 65, 67);
+$yellow: rgb(255, 198, 54);
+$blue: rgb(0, 173, 170);
+$white: rgb(230, 230, 230);
+$orange: rgb(255, 99, 68);
+$trans: .2s;
+
 body {
-  padding: 50px;
-  font-family: sans-serif;
+	margin: 0;
+	font-family: sans-serif;
 }
 
-a {
-  color: #00B7FF
+.rotatedNav {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	nav.index {
+		display: flex;
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			width: 50vw;
+			transition: $trans * 3;
+			background-color: $yellow;
+			color: $brown;
+			text-decoration: none;
+			font-size: 2.2em;
+			&:hover, &:focus-within {
+				width: 100vw;
+				text-decoration: underline;
+				transition: $trans;
+			}
+			&:nth-of-type(2) {
+				background-color: $brown;
+				color: $yellow;
+			}
+		}
+	}
 }
+

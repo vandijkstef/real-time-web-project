@@ -1,0 +1,11 @@
+<%- include _header %>
+<main>
+<% if (locals.repos) { %>
+	<% for (let i = 0; i < repos.length; i++) { %>
+		<div>
+			<p><%= repos[i].name %></p>
+		</div>
+	<% } %>
+<% } %>
+</main>
+<%- include _footer %>
