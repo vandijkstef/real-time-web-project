@@ -1,11 +1,14 @@
 <%- include _header %>
-<main>
-<% if (locals.repos) { %>
-	<% for (let i = 0; i < repos.length; i++) { %>
-		<div>
-			<p><%= repos[i].name %></p>
-		</div>
+<div class="flex">
+	<%- include _sidebar %>
+	<main>
+	<% if (locals.repos) { %>
+		<% for (let i = 0; i < repos.length; i++) { %>
+			<div>
+				<a href="/repo/<%= repos[i]._id %>"><%= repos[i].name %></a>
+			</div>
+		<% } %>
 	<% } %>
-<% } %>
-</main>
+	</main>
+</div>
 <%- include _footer %>

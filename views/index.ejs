@@ -1,4 +1,10 @@
 <%- include _header %>
+<% if (!locals.user) { %>
+	<header class="home">
+		<h1>CMDA Web Minor</h1>
+		<p>Hello! We are Communication and Multimedia Design (CMD) in Amsterdam. This site acts as a portal for student projects created during the web development minor. Everyone is free to browse our archive, students are able to login and find additional info.</p>
+	</header>
+<% } %>
 <div class="rotatedNav">
 	<nav class="index">
 		<% if (locals.user) { %>
