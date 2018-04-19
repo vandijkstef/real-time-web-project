@@ -52,7 +52,7 @@ app.use(session({
 
 app.use('/', require('./routes/index'));
 app.use('/repo', require('./routes/repos'));
-
+app.use('/login', require('./routes/login'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	next(createError(404));
