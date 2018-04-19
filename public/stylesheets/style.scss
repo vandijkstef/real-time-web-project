@@ -8,19 +8,80 @@ $trans: .2s;
 body {
 	margin: 0;
 	font-family: sans-serif;
+	background-color: $brown;
+}
+
+h1, h2, h3, h4, p {
+	color: $yellow;
+}
+
+p {
+	max-width: 40em;
+	font-size: 1.3em;
+}
+
+a {
+	color: $yellow;
+}
+
+.flex {
+	display: grid;
+	grid-template-columns: 10em auto;
+	main {
+		padding: 0 2em;
+	}
+}
+
+.side {
+	// padding: 2em 0;
+	background-color: darken($yellow, 10);
+	color: $brown;
+	min-height: 100vh;
+	a {
+		color: $brown;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li {
+			min-width: 10em;
+			border-bottom: .1em solid rgba($brown, .3);
+			a {
+				display: block;
+				font-weight: bold;
+				text-decoration: none;
+				padding: .6em 1em;
+				font-size: 1.2em;
+				transition: $trans;
+				background-color: $yellow;
+				&:hover, &:focus {
+					background-color: lighten($yellow, 5);
+				}
+			}
+		}
+	}
+}
+
+header {
+	&.home {
+		min-height: 18vh;
+		padding: 1em 3em;
+		border-bottom: 1em solid $yellow;
+	}
 }
 
 .rotatedNav {
 	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
+	min-height: 80vh;
+	border-bottom: 1em solid $yellow;
 	nav.index {
 		display: flex;
 		a {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			height: 100vh;
+			min-height: 80vh;
 			width: 50vw;
 			transition: $trans * 3;
 			background-color: $yellow;
@@ -31,10 +92,14 @@ body {
 				width: 100vw;
 				text-decoration: underline;
 				transition: $trans;
+				background-color: lighten($yellow, 5);
 			}
 			&:nth-of-type(2) {
 				background-color: $brown;
 				color: $yellow;
+				&:hover {
+					background-color: lighten($brown, 5);
+				}
 			}
 		}
 	}

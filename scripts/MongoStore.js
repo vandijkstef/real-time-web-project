@@ -9,18 +9,18 @@ class MongoStore {
 		this.collection = collection.toString();
 	}
 
-	Get() {
-		// mongoClient.connect(url, (err, db) => {
-		// 	if (err) throw err;
-		// 	const dbo = db.db('mydb');
-		// 	dbo.collection('anotherone').insertOne({
-		// 		data: 'object'
-		// 	}, (err, res) => {
-		// 		if (err) throw err;
-		// 		console.log('inserted', res);
-		// 		db.close();
-		// 	});
-		// });
+	Get(id, callback) { // TODO: Broken AF
+		mongoClient.connect(mongUrl, (err, db) => {
+			if (err) throw err;
+			const dbo = db.db(this.DB);
+			dbo.collection(this.collection).find({
+				_id: parseInt(id)
+			}).toArray((err, result) => {
+				if (err) throw err;
+				db.close();
+				return callback(result[0]);
+			});
+		});
 	}
 
 	GetAll(query = {}, callback) {

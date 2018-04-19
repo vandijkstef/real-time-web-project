@@ -23,13 +23,12 @@ class RepoStore extends MongoStore {
 						});	
 					}, () => {
 						super.GetAll({}, (dataRepos) => {
-							callback(dataRepos);
+							callback(dataRepos, 'new');
 						});
 					});  
 				});
 			} else {
-				console.log('got data');
-				callback(dataRepos);
+				callback(dataRepos, 'not modified');
 			}
 		});
 	}
