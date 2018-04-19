@@ -62,12 +62,19 @@ This project tries to be a social platform around the CMDA Github organisation. 
 
 ## API's
 ### Github
-Github is our main data source
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+Github is our main data source, and any other feature in the system will only work when that data is (or was) available through Github. Repos won't show up unless they are created, users won't be able to log in untill they made at least a fork and commit, etc. 
+Requested from Github:
+- Repos in the organisation
+	- name, description, urls, owner
+- Forks on those repos
+	- name, description, urls, owner, commit-count
+- Users on those forks
+	- name, description, urls, avatar
 
 ## Server Caching (DB)
 Data fetched from API's is cached on the server using MongoDB. Any data request within the system will first try to fetch that from the database. In the case the data doesn't exsist, or is invalid due to cache timeout, a (new) request to the API is made. That data is first stored, then fetched again from the database.
 ![Data request](./doc/data-request.JPG)
+To reduce the amount of requests that are delayed by external API's, the system will periodically fake those requests using `./scripts/tick.js`.
 
 ## Contributing
 Currently, no contributions are accepted. However, you are free to fork the project and build on it.
@@ -77,13 +84,15 @@ Currently, no contributions are accepted. However, you are free to fork the proj
 This project is copyleft, all wrongs reversed. Have fun! *Note: This might not be true for dependencies*
 
 ## Acknowledgments
-* ☕️
+* ☕️️️️☕️️️️
 
 <!-- * Create a "live" web app which reflects changes to the back-end data model in reactive front-end views, using real-time, event-based, messaging technologies like sockets or server-sent-events. -->
 <!-- * Describe their work in a professional readme with insightful diagrams showing the life cycle of their data. -->
 
 ---
 
+
+Notes Random:
 - Keep track of api calls in DB, so we can decide if we wanna do deep calls or not
 
 - Test if my update method actually updates and doesn't remove extra set variables
@@ -97,3 +106,25 @@ This project is copyleft, all wrongs reversed. Have fun! *Note: This might not b
 - I guess I wanna run some API calls on startup so we get users, even on a clear database
 - Wait, UserStore.FetchAll should fix that
 	- Oh, we might not wanna return sensitive data to the template engine
+
+Forks... Do I append them to the repo, or make their own table for it?
+When I append them, its one big data blob
+Forks are also used by individual users (get all forks from user X), so, yes, I want them seperated
+
+TODO WD:
+Group repos into classes
+
+
+
+Notes Larissa:
+Nieuwe website
+eerst koppenlijst opvragen, daarna lijsten, daarna links
+Mental modal -> Verwachtingen, lastig zonder zicht
+Niet ingewikkeld (structuur), skip to content is heel fijn.
+Consistentie!
+Iframes zijn not-done, kom je niet meer uit als je erin zit met je toetsenbord
+alt teksten, omschrijvende links en kopjes
+als alt leeg is, leest hij de complete img src voor
+JS icm screenreader
+iphone met brailleleesregel -> Bluetooth
+	40 tekens op leesregel
