@@ -113,7 +113,10 @@ Forks are also used by individual users (get all forks from user X), so, yes, I 
 
 TODO WD:
 Group repos into classes
-
+Neem mee
+- content inventarisatie
+- user scenario’s
+en een demootje ... (?)
 
 
 Notes Larissa:

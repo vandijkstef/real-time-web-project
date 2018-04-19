@@ -33,20 +33,6 @@ class RepoStore extends MongoStore {
 		});
 	}
 
-	GetAllForksByID(repoID, callback) {
-		super.GetAll({_id: repoID}, (dataRepo) => {
-			if (!dataRepo.forks) {
-				// Todo: get forks from GitAPI
-			} else {
-				// But wait, if its there, its already on the data object?
-			}
-		});
-	}
-
-	GetAllForks(dataRepo, callback) {
-
-	}
-
 	Store(gitRepo, callback) {
 		const user = gitRepo.owner;
 		const userStore = new UserStore();

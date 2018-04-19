@@ -21,18 +21,7 @@ class GitAPI extends API {
 		this.callCallback(forks_url, (data) => {
 			const forks = [];
 			data.forEach((fork) => {
-				const newFork = {
-					owner: {
-						name: fork.owner.login,
-						avatar: fork.owner.avatar_url,
-						profile: fork.owner.html_url,
-					},
-					urls: {
-						contributors: fork.contributors_url,
-						github: fork.html_url
-					}
-				};
-				forks.push(newFork);
+				forks.push(fork);
 			});
 			callback(forks);
 		});

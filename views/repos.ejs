@@ -4,9 +4,14 @@
 	<main>
 	<% if (locals.repos) { %>
 		<% for (let i = 0; i < repos.length; i++) { %>
-			<div>
-				<a href="/repo/<%= repos[i]._id %>"><%= repos[i].name %></a>
-			</div>
+			<% if (repos[i].repos.length > 0) { %>
+				<h2><%- repos[i].id %></h2>
+				<% for (let j = 0; j < repos[i].repos.length; j++) { %>
+					<div>
+						<a href="/repo/<%= repos[i].repos[j]._id %>"><%= repos[i].repos[j].name %></a>
+					</div>
+				<% } %>
+			<% } %>
 		<% } %>
 	<% } %>
 	</main>
