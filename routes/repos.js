@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
 		// console.log(dataRepo);
 		const forkStore = new ForkStore();
 		forkStore.GetAll(dataRepo, (dataForks) => {
-			console.log(dataForks);
+			// console.log(dataForks);
 			res.render('repo', { title: dataRepo.name, repo: dataRepo, forks: dataForks });
 		});
 	});

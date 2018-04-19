@@ -9,7 +9,7 @@ class ForkStore extends MongoStore {
 	}
 
 	GetAll(dataRepo, callback) {
-		super.GetAll({parent: dataRepo.id}, (dataForks) => {
+		super.GetAll({repo: dataRepo.id}, (dataForks) => {
 			if (dataForks.length === 0) {
 				const gitAPI = new GitAPI();
 				gitAPI.GetAllForks(dataRepo.urls.forks, (gitForks) => {
@@ -37,6 +37,7 @@ class ForkStore extends MongoStore {
 				_id: gitFork.id,
 				repo: dataRepo._id,
 				owner: dataUser._id,
+				ownerName: dataUser.name,
 				urls: {
 					html: gitFork.html_url,
 					contributors: gitFork.contributors_url

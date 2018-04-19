@@ -50,6 +50,11 @@ app.use(session({
 	resave: false
 }));
 
+app.use(function(req, res, next) {
+	res.locals.user = req.session.user;
+	next();
+});
+
 app.use('/', require('./routes/index'));
 app.use('/repo', require('./routes/repos'));
 app.use('/login', require('./routes/login'));

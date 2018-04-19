@@ -2,6 +2,9 @@
 <div class="flex">
 	<%- include _sidebar %>
 	<main>
+		<% if (locals.user) { %>
+			<p>logged in</p>
+		<% } %>
 		<p>login page</p>
 		<a href="https://github.com/login/oauth/authorize?client_id=<%- clientID %>&allow_signup=false">Login with Github</a>
 	</main>
