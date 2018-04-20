@@ -48,20 +48,14 @@ router.get('/oauth', (req, res) => {
 		request(authRequest, (err, userData) => {
 			const userStore = new UserStore();
 			const user = JSON.parse(userData.body);
-			// We possibly want to improve the datamodel with all the info we got here. TODO: Create userStore.update();
-			console.log(user);
 			userStore.Test(user, (exsisting) => {
-				console.log('is there', exsisting);
 				if (exsisting) {
 					user.token = token.access_token;
-					// Github user is a known user to the minor
-					// TODO: Store token.access_token
 					userStore.Store(user, (userData) => {
 						req.session.user = userData;
-						res.locals.user = req.session.user; // This will be handled by middleware in the following requests
-						res.render('login', { title: 'Logged in'});
+						res.locals.user = req.session.user; // This will be handled by middleware in the following requests, so this is probably useless since I redirect now
+						res.redirect('/profile');
 					});
-
 				} else {
 					// Who dis?!
 					req.session.user = null;

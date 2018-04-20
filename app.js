@@ -8,21 +8,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const sassMiddleware = require('node-sass-middleware');
 
-// const mongo = require('mongodb');
-// const mongoClient = mongo.MongoClient;
 const mongUrl = 'mongodb://localhost:27017/';
-
-// mongoClient.connect(url, (err, db) => {
-// 	if (err) throw err;
-// 	const dbo = db.db('mydb');
-// 	dbo.collection('anotherone').insertOne({
-// 		data: 'object'
-// 	}, (err, res) => {
-// 		if (err) throw err;
-// 		console.log('inserted', res);
-// 		db.close();
-// 	});
-// });
 
 const app = express();
 

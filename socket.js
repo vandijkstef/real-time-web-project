@@ -1,4 +1,5 @@
 const ws = require('ws').Server;
+const uniqid = require('uniqid');
 
 const Setup = (server) => {
 	const wss = new ws({server});
@@ -7,41 +8,32 @@ const Setup = (server) => {
 		const value = '; ' + req.headers.cookie;
 		const parts = value.split('; ' + 'connect.sid' + '=');
 		const sessionID = parts.pop().split(';').shift().replace('s%3A', '').split('.').shift();
-	
-		if (wsData.clients[sessionID] === undefined) {
-			// Fetch session data
-			let session;
-			console.log('do I has?');
-			// const sessionsFile = './sessions/' + sessionID + '.json';
-			// if (fs.existsSync(sessionsFile)) {
-			// 	session = JSON.parse(fs.readFileSync(sessionsFile, {encoding: 'utf8'}));
-			// }
-			// Add to memstore
-			wsData.clients[sessionID] = {
-				id: sessionID
-			};
-			// Add avatar data, if available
-			if (session && session.avatar) {
-				wsData.clients[sessionID].avatar = session.avatar.avatar;
-				wsData.clients[sessionID].emoji = session.avatar.emoji;
-			}
-		}
+		
+		let clientID = uniqid();
+		// if (wsData.clients[sessionID] === undefined) {
+		// 	// Fetch session data
+		// 	// TODO: ...
+		// 	// TODO: Why am I still using the sessionID? We get the full session passed from the client right? - Holy F, I exposed all session ID's....
+
+		// 	// Add to memstore
+		// 	wsData.clients[sessionID] = {
+		// 		id: sessionID
+		// 	};
+		// }
 		
 		ws.on('message', (message) => {
-			// Tell the terminal we got a message
-			// const action = message.split(';')[0];
 			const msgData = JSON.parse(message);
-			console.log('received', message, msgData, sessionID);
 			switch (msgData.action) {
 			case 'HI':
 				// Say hello to the client, be nice
 				if (msgData.error) {
-					ws.send('Hello guest: ' + sessionID);
-					ws.send(JSON.stringify(wsData.clients[sessionID]));
+					ws.send('Hello guest: ' + clientID);
 				} else {
-					wsData.clients[sessionID].user = msgData;
-					ws.send('Hello client: ' + sessionID);
-					ws.send(JSON.stringify(wsData.clients[sessionID]));
+					// Register client in Memstore
+					clientID = msgData.id;
+					wsData.clients[clientID] = {};
+					wsData.clients[clientID].user = msgData;
+					ws.send('Hello client: ' + clientID);
 				}
 				// Also, give the client the data
 				ws.send(JSON.stringify(wsData));
@@ -58,8 +50,8 @@ const Setup = (server) => {
 		});
 	
 		ws.on('close', () => {
-			console.log('Disconnected: ' + sessionID);
-			delete wsData.clients[sessionID];
+			console.log('Disconnected: ' + clientID);
+			delete wsData.clients[clientID];
 			WSbroadcast(JSON.stringify(wsData), ws, wss);
 		});
 	});
