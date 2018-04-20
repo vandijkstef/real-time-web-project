@@ -29,20 +29,24 @@ const Setup = (server) => {
 		
 		ws.on('message', (message) => {
 			// Tell the terminal we got a message
-			const action = message.split(';')[0];
-			console.log('received', message, action, sessionID);
-			switch (action) {
+			// const action = message.split(';')[0];
+			const msgData = JSON.parse(message);
+			console.log('received', message, msgData, sessionID);
+			switch (msgData.action) {
 			case 'HI':
 				// Say hello to the client, be nice
-				ws.send('Hello client: ' + sessionID);
-				ws.send(JSON.stringify(wsData.clients[sessionID]));
+				if (msgData.error) {
+					ws.send('Hello guest: ' + sessionID);
+					ws.send(JSON.stringify(wsData.clients[sessionID]));
+				} else {
+					wsData.clients[sessionID].user = msgData;
+					ws.send('Hello client: ' + sessionID);
+					ws.send(JSON.stringify(wsData.clients[sessionID]));
+				}
 				// Also, give the client the data
 				ws.send(JSON.stringify(wsData));
 				// And broadcast that global data to all clients
 				WSbroadcast(JSON.stringify(wsData), ws, wss);
-				break;
-			case 'REGISTER':
-				Register(message, sessionID, ws, wss);
 				break;
 			case 'MESSAGE':
 				HandleChatMessage(message, sessionID, ws, wss);
@@ -70,28 +74,6 @@ const WSbroadcast = (data, ws, wss) => {
 			client.send(data);
 		}
 	});
-};
-
-const Register = (message, sessionID, ws, wss) => {
-	const avatar = {
-		avatar: message.split(';')[1].split(':')[1],
-	};
-	// avatar.emoji = emoji.find(avatar.avatar).emoji;
-	wsData.clients[sessionID].avatar = avatar.avatar;
-	wsData.clients[sessionID].emoji = avatar.emoji;
-	ws.send('registered:' + avatar.emoji);
-	// Also, give the client the data
-	ws.send(JSON.stringify(wsData));
-	// And broadcast that global data to all clients
-	WSbroadcast(JSON.stringify(wsData), ws, wss);
-
-	// Fetch session file
-	// const sessionsFile = './sessions/' + sessionID + '.json';
-	// const session = JSON.parse(fs.readFileSync(sessionsFile, {encoding: 'utf8'}));
-	// Place avatar in session
-	// session.avatar = avatar;
-	// Store the session
-	// fs.writeFileSync(sessionsFile, JSON.stringify(session));
 };
 
 const HandleChatMessage = (message, sessionID, ws, wss) => {

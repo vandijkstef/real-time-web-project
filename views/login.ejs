@@ -4,7 +4,7 @@
 	<main>
 		<% if (locals.user) { %>
 			<p>logged in as <%- user.name %></p>
-		<% } else { %>
+		<% } else if (locals.clientID) { %>
 			<p>login page</p>
 			<a href="https://github.com/login/oauth/authorize?client_id=<%- clientID %>&allow_signup=false">Login with Github</a>
 		<% } %>
