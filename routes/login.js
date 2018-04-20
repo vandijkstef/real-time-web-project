@@ -47,15 +47,18 @@ router.get('/oauth', (req, res) => {
 			userStore.Test(user, (exsisting) => {
 				console.log('is there', exsisting);
 				if (exsisting) {
-					req.session.user = user;
+					user.token = token.access_token;
 					// Github user is a known user to the minor
 					// TODO: Store token.access_token
-					// TODO: Setup session?
+					userStore.Store(user, (userData) => {
+						req.session.user = userData;
+						res.render('login', { title: 'Logged in'});
+					});
 
-					res.render('login', { title: 'Logged in', clientID: process.env.GITOAUTHCLIENT});
 				} else {
 					// Who dis?!
-					res.render('login', { title: 'NOT Logged in', clientID: process.env.GITOAUTHCLIENT});
+					req.session.user = null;
+					res.render('login', { title: 'NOT Logged in', clientID: process.env.GITOAUTHCLIENT, error: 'Did you already fork and commit in this organisation?'});
 				}
 			});
 		});

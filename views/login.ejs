@@ -3,10 +3,14 @@
 	<%- include _sidebar %>
 	<main>
 		<% if (locals.user) { %>
-			<p>logged in</p>
+			<p>logged in as <%- user.name %></p>
+		<% } else { %>
+			<p>login page</p>
+			<a href="https://github.com/login/oauth/authorize?client_id=<%- clientID %>&allow_signup=false">Login with Github</a>
 		<% } %>
-		<p>login page</p>
-		<a href="https://github.com/login/oauth/authorize?client_id=<%- clientID %>&allow_signup=false">Login with Github</a>
+		<% if (locals.error) { %>
+			<p><%- error %></p>
+		<% } %>
 	</main>
 </div>
 <%- include _footer %>

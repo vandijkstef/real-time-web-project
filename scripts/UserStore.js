@@ -34,6 +34,7 @@ class UserStore extends MongoStore {
 	Store(gitOwner, callback) {
 		const data = {
 			_id: gitOwner.id,
+			niceName: gitOwner.name,
 			systemName: gitOwner.login,
 			avatar: gitOwner.avatar_url,
 			type: gitOwner.type,
@@ -42,9 +43,12 @@ class UserStore extends MongoStore {
 				userInfo: gitOwner.url
 			}
 		};
+		if (gitOwner.token) {
+			data.token = gitOwner.token;
+		}
 		this.Expand(data, (data) => {
 			super.PutUpdate(data, () => {
-				callback();
+				callback(data);
 			});
 		});
 	}

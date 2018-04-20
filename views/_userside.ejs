@@ -1,0 +1,9 @@
+<% if (locals.users) { %>
+	<div class="userside">
+		<ul>
+			<% for (let i = 0; i < users.length; i++) { %>
+				<li class="offline"><a href="/profile/<%- users[i]._id %>"><%- users[i].systemName || users[i].systemName %></a></li>
+			<% } %>
+		</ul>
+	</div>
+<% } %>

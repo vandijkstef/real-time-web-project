@@ -16,7 +16,7 @@ class RepoStore extends MongoStore {
 			// If 0 or timestamp invalid (too old) -> refresh
 			if (dataRepos.length === 0) {
 				const gitAPI = new GitAPI();
-				gitAPI.GetReposFromOrg('cmda-minor-web', (gitRepos) => {
+				gitAPI.GetReposFromOrg(process.env.GITORG, (gitRepos) => {
 					async.forEach(gitRepos, (gitRepo, callback) => { 	
 						this.Store(gitRepo, () => {
 							callback(); 

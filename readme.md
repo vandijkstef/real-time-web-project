@@ -118,6 +118,14 @@ Neem mee
 - user scenario’s
 en een demootje ... (?)
 
+Note session:
+If I create a public /session front to fetch the public user session data...
+If I get it from the server... nope
+So, I have to fetch it from front and handshake with that?
+That makes the client aware of it's session
+Is it a problem?
+No, because it's based on your session, its a whole other problem if someone can takeover sessions.
+And I immediatly send it to the socket server as soon as I fetched it.
 
 Notes Larissa:
 Nieuwe website
