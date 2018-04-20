@@ -88,4 +88,5 @@ function onListening() {
 		: 'port ' + addr.port;
 	console.log('Listening on ' + bind);
 	require('../scripts/tick.js');
+	require('../socket.js')(server);
 }
