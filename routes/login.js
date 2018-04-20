@@ -4,8 +4,14 @@ const request = require('request');
 const UserStore = require('../scripts/UserStore.js');
 
 router.get('/', (req, res) => {
-	res.redirect('https://github.com/login/oauth/authorize?client_id=' + process.env.GITOAUTHCLIENT + '&allow_signup=false')
-	// res.render('login', { title: 'Login', clientID: process.env.GITOAUTHCLIENT});
+	res.redirect('https://github.com/login/oauth/authorize?client_id=' + process.env.GITOAUTHCLIENT + '&allow_signup=false');
+});
+
+router.get('/logout', (req, res) => {
+	req.session.destroy(function(err) {
+		if (err) throw err;
+		res.redirect('/');
+	});
 });
 
 // TODO: improve error handling
@@ -52,6 +58,7 @@ router.get('/oauth', (req, res) => {
 					// TODO: Store token.access_token
 					userStore.Store(user, (userData) => {
 						req.session.user = userData;
+						res.locals.user = req.session.user; // This will be handled by middleware in the following requests
 						res.render('login', { title: 'Logged in'});
 					});
 
@@ -64,7 +71,5 @@ router.get('/oauth', (req, res) => {
 		});
 	});
 });
-
-
 
 module.exports = router;
