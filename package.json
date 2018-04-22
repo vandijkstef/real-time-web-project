@@ -27,7 +27,8 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "data/*"
+	  "data/*",
+	  "public/*"
     ],
     "delay": "2000"
   }

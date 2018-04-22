@@ -44,17 +44,16 @@ const DoSocket = () => {
 		ws.send(SocketMessages.hi());
 	};
 	ws.onmessage = (e) => {
+		let data;
 		try {
-			const data = JSON.parse(e.data);
+			data = JSON.parse(e.data);
 			console.log(data);
+			// TODO: test if we actually received wsData
+			
 		} catch(err) {
-			const action = e.data.split(':')[0];
-			const param = e.data.split(':')[1];
-			switch (action) {
-			default:
-				console.log(action, param);
-				break;
-			}
+			console.warn('We didn\'t receive an object', e.data);
+		} finally {
+			UpdateUI(data);
 		}
 	};
 	ws.onclose = () => {
@@ -66,7 +65,7 @@ const DoSocket = () => {
 	};
 };
 
-// Standardize socket messages
+// Standardize send socket messages
 const SocketMessages = {
 	hi: () => {
 		mySession.action = 'HI';
@@ -92,8 +91,32 @@ const InitUI = () => {
 	SetButtons();
 };
 
+// Update the UI based on all wsData received
+const UpdateUI = (wsData) => {
+	console.log('Updating UI');
+	UpdateUserList(wsData);
+};
 
-
+const UpdateUserList = (wsData) => {
+	if (!elements.userList) {
+		elements.userList = document.querySelector('.userside > ul');
+		elements.userListItems = document.querySelectorAll('.userside li');
+	}
+	if (elements.userList) {
+		// Set all users offline
+		elements.userListItems.forEach((userListItem) => {
+			userListItem.classList.add('offline');
+			userListItem.classList.remove('online');
+		});
+		// Set them back online if they are in the data
+		Object.keys(wsData.clients).forEach((clientID) => {
+			const userElement = document.querySelector(`#userstatus-${clientID}`);
+			console.log(clientID, userElement);
+			userElement.classList.remove('offline');
+			userElement.classList.add('online');
+		});
+	}
+};
 
 // Set UI to offline, try to reconnect
 const UIOffline = () => {

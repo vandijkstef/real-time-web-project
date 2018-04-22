@@ -32,6 +32,14 @@ a {
 	}
 }
 
+.side, .userside {
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
 .side {
 	// padding: 2em 0;
 	background-color: darken($yellow, 10);
@@ -41,9 +49,6 @@ a {
 		color: $brown;
 	}
 	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
 		li {
 			min-width: 10em;
 			border-bottom: .1em solid rgba($brown, .3);
@@ -58,6 +63,29 @@ a {
 				&:hover, &:focus {
 					background-color: lighten($yellow, 5);
 				}
+			}
+		}
+	}
+}
+
+.userside {
+	li {
+		margin-bottom: .2em;
+		display: flex;
+		justify-content: baseline;
+		.status {
+			font-size: 3em;
+			margin-top: -0.35em;
+			margin-right: .2em;
+		}
+		&.offline {
+			.status {
+				color: rgba(black, .5);
+			}
+		}
+		&.online {
+			.status {
+				color: green;
 			}
 		}
 	}

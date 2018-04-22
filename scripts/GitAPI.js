@@ -5,7 +5,7 @@ class GitAPI extends API {
 	constructor() {
 		super('https://api.github.com');
 		if (process.env.GITTOKEN) {
-			this.auth = '?access_token=' + process.env.GITTOKEN;
+			this.auth = 'access_token=' + process.env.GITTOKEN;
 		} else {
 			console.log('No Git API token: Server calls limited');
 		}
@@ -18,8 +18,9 @@ class GitAPI extends API {
 	}
 
 	GetAllForks(forks_url, callback) {
-		this.callCallback(forks_url + '?per_page=100', (data) => {
+		this.callCallback(forks_url, (data) => {
 			const forks = [];
+			console.log(data);
 			data.forEach((fork) => {
 				forks.push(fork);
 			});

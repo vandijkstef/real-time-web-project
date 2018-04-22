@@ -2,7 +2,12 @@
 	<div class="userside">
 		<ul>
 			<% for (let i = 0; i < users.length; i++) { %>
-				<li class="offline"><a href="/profile/<%- users[i]._id %>"><%- users[i].systemName || users[i].systemName %></a></li>
+				<li class="offline" id="userstatus-<%- users[i]._id %>">
+					<span class="status">&bull;</span>
+					<a href="/profile/<%- users[i]._id %>">
+						<span class="name"><%- users[i].niceName || users[i].systemName %></span>
+					</a>
+				</li>
 			<% } %>
 		</ul>
 	</div>

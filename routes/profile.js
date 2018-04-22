@@ -8,6 +8,7 @@ router.get('/', function(req, res) {
 	} else {
 		const userStore = new UserStore();
 		userStore.GetAll({}, (users) => {
+			console.log(users);
 			res.render('profile', { title: 'Profile', profile: req.session.user, yours: true, users: users });
 		});
 	}

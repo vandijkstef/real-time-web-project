@@ -27,16 +27,14 @@ const Setup = (server) => {
 			case 'HI':
 				// Say hello to the client, be nice
 				if (msgData.error) {
-					ws.send('Hello guest: ' + clientID);
+					// ws.send('Hello guest: ' + clientID);
 				} else {
 					// Register client in Memstore
 					clientID = msgData.id;
 					wsData.clients[clientID] = {};
 					wsData.clients[clientID].user = msgData;
-					ws.send('Hello client: ' + clientID);
+					// ws.send('Hello client: ' + clientID);
 				}
-				// Also, give the client the data
-				ws.send(JSON.stringify(wsData));
 				// And broadcast that global data to all clients
 				WSbroadcast(JSON.stringify(wsData), ws, wss);
 				break;
@@ -62,7 +60,7 @@ const wsData = { // Yes, this will be cleared on restart
 
 const WSbroadcast = (data, ws, wss) => {
 	wss.clients.forEach(function each(client) {
-		if (client !== ws && client.readyState === ws.OPEN) {
+		if (client.readyState === ws.OPEN) {
 			client.send(data);
 		}
 	});
