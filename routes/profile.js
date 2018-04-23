@@ -6,10 +6,7 @@ router.get('/', function(req, res) {
 	if (!req.session.user) {
 		res.redirect('/');
 	} else {
-		const userStore = new UserStore();
-		userStore.GetAll({}, (users) => {
-			res.render('profile', { title: 'Profile', profile: req.session.user, yours: true, users: users });
-		});
+		res.render('profile', { title: 'Profile', profile: req.session.user, yours: true });
 	}
 });
 
@@ -17,11 +14,12 @@ router.get('/:id', function(req, res) {
 	if (!req.session.user) {
 		res.redirect('/');
 	} else {
-		// TODO: Get user by their ID
-		// TODO: Redirect users back to their own profile, if they try to look at their own profile
+		if (req.params.id == req.session.user._id) {
+			res.redirect('/profile');
+		}
 		const userStore = new UserStore();
-		userStore.GetAll({}, (users) => {
-			res.render('profile', { title: 'Profile', profile: req.session.user, users: users });
+		userStore.Get(req.params.id, (profileUser) => {
+			res.render('profile', { title: 'Profile', profile: profileUser });
 		});
 	}
 });
