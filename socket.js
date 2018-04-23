@@ -33,6 +33,7 @@ const Setup = (server) => {
 					clientID = msgData.id;
 					wsData.clients[clientID] = {};
 					wsData.clients[clientID].user = msgData;
+					delete wsData.toRemove[clientID];
 					// ws.send('Hello client: ' + clientID);
 				}
 				// And broadcast that global data to all clients
@@ -49,13 +50,22 @@ const Setup = (server) => {
 	
 		ws.on('close', () => {
 			console.log('Disconnected: ' + clientID);
-			delete wsData.clients[clientID];
-			WSbroadcast(JSON.stringify(wsData), ws, wss);
+			// I need to postpone this action untill im sure they didn't just reconnect
+			// delete wsData.clients[clientID];
+			wsData.toRemove[clientID] = {};
+			setTimeout(() => {
+				Object.keys(wsData.toRemove).forEach((clientID) => {
+					console.log(clientID);
+					delete wsData.clients[clientID];
+				});
+				WSbroadcast(JSON.stringify(wsData), ws, wss);
+			}, 1000);
 		});
 	});
 };
 const wsData = { // Yes, this will be cleared on restart
-	clients: {}
+	clients: {},
+	toRemove: {}
 };
 
 const WSbroadcast = (data, ws, wss) => {
