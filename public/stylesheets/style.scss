@@ -139,3 +139,23 @@ header {
 	}
 }
 
+#chat {
+	ul {
+		list-style: none;
+		padding: 0;
+		height: 12em;
+		overflow-y: scroll;
+		background-color: #EEE;
+		li {
+			font-size: 1.4em;
+			padding: .5em 0;
+			border-top: 1px solid #DDD;
+			display: flex;
+			align-items: baseline;
+			&.yours {
+				justify-content: flex-end;
+			}
+		}
+	}
+}
+
