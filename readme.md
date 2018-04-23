@@ -48,17 +48,66 @@ Additional settings are defined in `.json` files in the root. This to not create
 
 ## Features (Wishlist)
 This project tries to be a social platform around the CMDA Github organisation. Soon to be released features:
-- 🔍 Github organisation Repo explorer 
+- 🔍 Github organisation Repo explorer ✔️
 - 🔎 Repo forks explorer 
 - 💯 Awesome relevant data and numbers
 - 🔢 Even more irrelevant data and numbers 
-- 🔏 Github user login through oAuth
+- 🔏 Github user login through oAuth ✔️
 - 🍌 Fully featured profile page
-- 👋 Online status display (for logged in users) 
-- 💬 Chat system 
+- 👋 Online status display (for logged in users)️ ✔️
+- 💬 Private chat system (persistant) ✔️
+- ⚠️ Chat notification system (online and offline)
 - #️⃣  Slack Integration
 - 🐦 Twitter things? 
 - 😵 Possibly class management stuff... 
+
+### 🔍 Github organisation Repo explorer
+Status: ✔️  
+Description: View all repositories within an organisation. The functionality is limited, since the repo's are merely a reference to the forks the students are using
+
+### 🔎 Repo forks explorer
+Status: ❌  
+Description: Explore the forks within the found repositories, showing some basic information about them.
+
+### 💯 Awesome relevant data and numbers
+Status: ❌  
+Description: Show some additional numbers, like commit count per fork, project and user. Maybe some other numbers that can be gathered through the Github API.
+
+### 🔢 Even more irrelevant data and numbers 
+Status: ❌  
+Description: A wishlist item...
+
+### 🔏 Github user login through oAuth
+Status: ✔️  
+Description: Users known within the organisation (forked and commited on at least one repo) are able to login using Github oAuth
+
+### 🍌 Fully featured profile page
+Status: ❌  
+Description: Let users be a lil' more in control about their profile. Dancing banana required!
+
+### 👋 Online status display (for logged in users)️
+Status: ✔️  
+Description: Logged in users will be able to see who is there!
+
+### 💬 Private chat system (persistant)
+Status: ✔️  
+Description: Chat with another user (in private). Messages are stored in the database, and restored on a reload. This means you can even message another person that is offline.
+
+### ⚠️ Chat notification system (online and offline)
+Status: ❌  
+Description: Notify chat users on messages when they are online, but also when they come back online. Possibly also use browser notifications
+
+### #️⃣ Slack Integration
+Status: ❌  
+Description: Let's see what we can do with slack
+
+### 🐦Twitter
+Status: ❌  
+Description: It would be neat to provide a twitter feed on subject pages with tweets about that subject.
+
+### 😵 Possibly class management stuff...
+Status: ❌❌❌  
+Description: ~ Warning ~
 
 ## API's
 ### Github
