@@ -36,9 +36,20 @@ app.use(session({
 	resave: false
 }));
 
+const UserStore = require('./scripts/UserStore.js');
 app.use(function(req, res, next) {
-	res.locals.user = req.session.user;
-	next();
+	if (req.session.user) {
+		// Make the user available in all templates
+		res.locals.user = req.session.user;
+		// Also, provide the full user list for chat interaction
+		const userStore = new UserStore();
+		userStore.GetAll({}, (users) => {
+			res.locals.users = users;
+			next();
+		});
+	} else {
+		next();
+	}
 });
 
 app.use('/', require('./routes/index'));
