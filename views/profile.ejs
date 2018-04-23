@@ -2,8 +2,24 @@
 <div class="flex">
 	<%- include _sidebar %>
 	<main>
-		<h1><%- user.niceName || user.systemName %></h1>
-		<img src="<%- user.avatar %>" alt="<%- user.systemName %>'s avatar">
+		<h1><%- profile.niceName || profile.systemName %></h1>
+		<img src="<%- profile.avatar %>" alt="<%- profile.systemName %>'s avatar">
+		<% if (!locals.yours) { %>
+			<section id="chat">
+				<h2>Chat</h2>
+				<ul>
+					<!-- Let JS fill this -->
+					<!-- TODO: Fetch messages from store -->
+				</ul>
+				<form id="chatmessage">
+					<input type="hidden" name="you" value="<%- user._id %>">
+					<input type="hidden" name="other" value="<%- profile._id %>">
+					<input type="text" name="message">
+					<input type="submit">
+				</form>
+			</section>
+		<% } %>
+
 	</main>
 	<%- include _userside %>
 </div>
