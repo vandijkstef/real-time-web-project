@@ -133,7 +133,7 @@ Currently, no contributions are accepted. However, you are free to fork the proj
 This project is copyleft, all wrongs reversed. Have fun! *Note: This might not be true for dependencies*
 
 ## Acknowledgments
-* ☕️️️️☕️️️️
+* ☕️️️️☕️️️️️️️️️☕️️️️️️️️️
 
 <!-- * Create a "live" web app which reflects changes to the back-end data model in reactive front-end views, using real-time, event-based, messaging technologies like sockets or server-sent-events. -->
 <!-- * Describe their work in a professional readme with insightful diagrams showing the life cycle of their data. -->
