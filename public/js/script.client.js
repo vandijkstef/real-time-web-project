@@ -3,7 +3,20 @@ let ws;
 /// FORMS ///
 // Catch all form submissions and hook up the actions needed
 const CatchForms = () => {
-	console.log('settings forms');
+	const forms = document.querySelectorAll('form');
+	forms.forEach((form) => {
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			switch (e.target.id) {
+			case 'chatmessage':
+				ws.send(SocketMessages.message(form));
+				break;
+			default:
+				console.warn('Form not implemented');
+				break;
+			}
+		});
+	});
 };
 
 /// BUTTONS ///
@@ -47,13 +60,15 @@ const DoSocket = () => {
 		let data;
 		try {
 			data = JSON.parse(e.data);
-			console.log(data);
-			// TODO: test if we actually received wsData
-			
+			console.log(data);			
 		} catch(err) {
 			console.warn('We didn\'t receive an object', e.data);
 		} finally {
-			UpdateUI(data);
+			if (data.action === 'MESSAGE') {
+				HandleIncomingMessage(data);
+			} else {
+				UpdateUI(data);
+			}
 		}
 	};
 	ws.onclose = () => {
@@ -75,8 +90,14 @@ const SocketMessages = {
 		const value = element.querySelector('select[name=name]').value;
 		return `REGISTER;ELEMENT:${value};`;
 	},
-	message: (msg) => {
-		return `MESSAGE;CHAT:${msg};`;
+	message: (form) => {
+		const msg = {
+			action: 'MESSAGE',
+			text: form.querySelector('input[name=message]').value,
+			sendBy: form.querySelector('input[name=you]').value,
+			for: form.querySelector('input[name=other]').value
+		};
+		return JSON.stringify(msg);
 	}
 };
 
@@ -86,14 +107,12 @@ const elements = {};
 
 // Initialize UI
 const InitUI = () => {
-	console.log('init UI');
 	CatchForms();
 	SetButtons();
 };
 
 // Update the UI based on all wsData received
 const UpdateUI = (wsData) => {
-	console.log('Updating UI');
 	UpdateUserList(wsData);
 };
 
@@ -111,11 +130,14 @@ const UpdateUserList = (wsData) => {
 		// Set them back online if they are in the data
 		Object.keys(wsData.clients).forEach((clientID) => {
 			const userElement = document.querySelector(`#userstatus-${clientID}`);
-			console.log(clientID, userElement);
 			userElement.classList.remove('offline');
 			userElement.classList.add('online');
 		});
 	}
+};
+
+const HandleIncomingMessage = (msgData) => {
+	console.log(msgData);
 };
 
 // Set UI to offline, try to reconnect
