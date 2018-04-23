@@ -1,25 +1,11 @@
 const ws = require('ws').Server;
 const uniqid = require('uniqid');
+const ChatStore = require('./scripts/ChatStore.js');
 
 const Setup = (server) => {
 	const wss = new ws({server});
 	wss.on('connection', (ws, req) => {
-		// Fetch sessionID
-		const value = '; ' + req.headers.cookie;
-		const parts = value.split('; ' + 'connect.sid' + '=');
-		const sessionID = parts.pop().split(';').shift().replace('s%3A', '').split('.').shift();
-		
 		let clientID = uniqid();
-		// if (wsData.clients[sessionID] === undefined) {
-		// 	// Fetch session data
-		// 	// TODO: ...
-		// 	// TODO: Why am I still using the sessionID? We get the full session passed from the client right? - Holy F, I exposed all session ID's....
-
-		// 	// Add to memstore
-		// 	wsData.clients[sessionID] = {
-		// 		id: sessionID
-		// 	};
-		// }
 		
 		ws.on('message', (message) => {
 			const msgData = JSON.parse(message);
@@ -31,6 +17,7 @@ const Setup = (server) => {
 				} else {
 					// Register client in Memstore
 					clientID = msgData.id;
+					ws.client = clientID;
 					wsData.clients[clientID] = {};
 					wsData.clients[clientID].user = msgData;
 					delete wsData.toRemove[clientID];
@@ -40,10 +27,11 @@ const Setup = (server) => {
 				WSbroadcast(JSON.stringify(wsData), ws, wss);
 				break;
 			case 'MESSAGE':
-				HandleChatMessage(message, sessionID, ws, wss);
+				console.log(msgData);
+				HandleChatMessage(msgData, ws, wss);
 				break;
 			default:
-				ws.send('Not implemented: ' + sessionID);
+				ws.send('Not implemented: ' + clientID);
 				break;
 			}
 		});
@@ -76,15 +64,32 @@ const WSbroadcast = (data, ws, wss) => {
 	});
 };
 
-const HandleChatMessage = (message, sessionID, ws, wss) => {
-	const theMsg = message.split(';')[1].split(':')[1];
-	const msg = {
-		user: wsData.clients[sessionID],
-		msg: theMsg
-	};
-	WSbroadcast(JSON.stringify(msg), ws, wss);
-	msg.yours = true;
-	ws.send(JSON.stringify(msg));
+const WSbroadcastMessage = (message, ws, wss) => {
+	wss.clients.forEach(function each(client) {
+		if (client.readyState === ws.OPEN) {
+			// console.log('this', client.client, message);
+			if (message.sendBy == client.client || message.for == client.client) {
+				client.send(JSON.stringify(message));
+			}
+		}
+	});
+};
+
+const HandleChatMessage = (message, ws, wss) => {
+	console.log(message.sendBy, ws.client);
+	if (message.sendBy != ws.client) {
+		console.log('Chat auth error');
+		return;
+	} else {
+		const chatStore = new ChatStore();
+		chatStore.Store(message, (message) => {
+			WSbroadcastMessage(message, ws, wss);
+		});
+	}
+	// Broadcast the msg back to the relevant users, with the msg ID
+
+	// msg.yours = true;
+	// ws.send(JSON.stringify(msg));
 };
 
 module.exports = Setup;
