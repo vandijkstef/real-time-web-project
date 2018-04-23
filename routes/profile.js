@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const UserStore = require('../scripts/UserStore.js');
+const ChatStore = require('../scripts/ChatStore.js');
 
 router.get('/', function(req, res) {
 	if (!req.session.user) {
@@ -19,7 +20,10 @@ router.get('/:id', function(req, res) {
 		}
 		const userStore = new UserStore();
 		userStore.Get(req.params.id, (profileUser) => {
-			res.render('profile', { title: 'Profile', profile: profileUser });
+			const chatStore = new ChatStore();
+			chatStore.GetConversation(req.session.user._id, profileUser._id, (chatData) => {
+				res.render('profile', { title: 'Profile', profile: profileUser, chat: chatData });
+			});
 		});
 	}
 });
