@@ -8,8 +8,16 @@
 			<section id="chat">
 				<h2>Chat</h2>
 				<ul>
-					<!-- Let JS fill this -->
-					<!-- TODO: Fetch messages from store -->
+					<% if (locals.chat) { %>
+						<% for (let i = 0; i < chat.length; i++) { %>
+							<% if (chat[i].sendBy == user._id) { %>
+								<li id ="<%- chat[i]._id %>" class="yours"><%- chat[i].text %></li>
+							<% } else { %>
+								<li id ="<%- chat[i]._id %>" ><%- chat[i].text %></li>
+							<% } %>
+						<% } %>
+					<% } %>
+					<!-- End of chat history -->
 				</ul>
 				<form id="chatmessage">
 					<input type="hidden" name="you" value="<%- user._id %>">
