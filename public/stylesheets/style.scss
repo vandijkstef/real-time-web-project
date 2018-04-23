@@ -69,6 +69,10 @@ a {
 }
 
 .userside {
+	ul {
+		display: flex;
+		flex-direction: column;
+	}
 	li {
 		margin-bottom: .2em;
 		display: flex;
@@ -79,11 +83,13 @@ a {
 			margin-right: .2em;
 		}
 		&.offline {
+			order: 2;
 			.status {
 				color: rgba(black, .5);
 			}
 		}
 		&.online {
+			order: 1;
 			.status {
 				color: green;
 			}

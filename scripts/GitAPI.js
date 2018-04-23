@@ -20,7 +20,6 @@ class GitAPI extends API {
 	GetAllForks(forks_url, callback) {
 		this.callCallback(forks_url, (data) => {
 			const forks = [];
-			console.log(data);
 			data.forEach((fork) => {
 				forks.push(fork);
 			});

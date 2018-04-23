@@ -8,9 +8,8 @@ class API {
 
 	callCallback(url, callback) {
 		url = url.replace(this.server, ''); // Should we somehow ask a complete url, strip it
-		console.log(this.server + url + '?' +  (this.auth + '&' || '') + 'per_page=99');
 		request({
-			url: this.server + url + (this.auth || ''),
+			url: this.server + url + '?' + (this.auth + '&' || '') + 'per_page=99',
 			headers: {
 				'User-Agent': 'NODEJS'
 			}
@@ -18,7 +17,6 @@ class API {
 			let data;
 			try {
 				data = JSON.parse(body);
-				console.log(body);
 				callback(data);
 			} catch(err) {
 				callback({
