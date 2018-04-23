@@ -137,7 +137,24 @@ const UpdateUserList = (wsData) => {
 };
 
 const HandleIncomingMessage = (msgData) => {
-	console.log(msgData);
+	if (!elements.chatInput) {
+		elements.chatInput = document.querySelector('input[name=message]');
+	}
+	if (!elements.chatUl) {
+		elements.chatUl = document.querySelector('#chat ul');
+	}
+
+	const chatLi = document.createElement('li');
+
+	chatLi.id = msgData._id;
+	chatLi.innerText = msgData.text;
+	if (msgData.sendBy == mySession.id) {
+		elements.chatInput.value = '';
+		chatLi.classList.add('yours');
+	}
+	
+	elements.chatUl.appendChild(chatLi);
+	elements.chatUl.scrollTop = elements.chatUl.scrollHeight;
 };
 
 // Set UI to offline, try to reconnect
