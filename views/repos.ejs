@@ -1,18 +1,28 @@
 <%- include _header %>
 <div class="flex">
 	<%- include _sidebar %>
-	<main>
-	<% if (locals.repos) { %>
-		<% for (let i = 0; i < repos.length; i++) { %>
-			<% if (repos[i].repos.length > 0) { %>
-				<h2><%- repos[i].id %></h2>
-				<% for (let j = 0; j < repos[i].repos.length; j++) { %>
-					<div>
-						<a href="/repo/<%= repos[i].repos[j]._id %>"><%= repos[i].repos[j].name %></a>
-					</div>
+	<main class="repos">
+	<% if (locals.classes) { %>
+		<% for (let i = 0; i < classes.length; i++) { %>
+			<section>
+				<h2><a href="/repo/<%- classes[i].id %>"><%- classes[i].label %></a></h2>
+				<% if (locals.user) { %>
+					<ul>
+					<% for (let j = 0; j < classes[i].goals.length; j++) { %>
+						<li><%- classes[i].goals[j].short %></li>
+					<% } %>
+					</ul>
+					<ul>
+					<% for (let j = 0; j < classes[i].resources.length; j++) { %>
+						<li><%- classes[i].resources[j].name %></li>
+					<% } %>
+					</ul>
+				<% } else { %>
+					<p><%- classes[i].description %></p>
 				<% } %>
-			<% } %>
+			</section>
 		<% } %>
+
 	<% } %>
 	</main>
 	<%- include _userside %>

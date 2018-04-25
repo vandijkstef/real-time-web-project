@@ -188,3 +188,27 @@ als alt leeg is, leest hij de complete img src voor
 JS icm screenreader
 iphone met brailleleesregel -> Bluetooth
 	40 tekens op leesregel
+
+
+Notes Feedback WD:
+- 3 goals per subject
+- Lessons/presentations
+
+For the class page: What If I show:
+- Guests:
+	- Archive
+		X Classname
+		X Description
+			- Student Work (repo/detail page) (collect from repos?)
+
+- Users:
+	- Events above this!
+	- Class
+		X Classname
+		X Goals
+			- Requirements/Matrix?
+		X-ish Lessons/Presentations/Resources
+			
+		
+		- Detail page - moodle-like - also shows all forks
+	

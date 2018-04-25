@@ -1,46 +1,409 @@
 [
 	{
 		"id": "wafs",
-		"repos": ["web-app-from-scratch"]
+		"label": "Web app from scratch",
+		"description": "Description about the subject",
+		"repos": ["web-app-from-scratch"],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "cssttr",
-		"repos": ["css-to-the-rescue"]
+		"label": "CSS to the rescue",
+		"description": "Description about the subject",
+		"repos": ["css-to-the-rescue"],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "pm",
-		"repos": ["performance-matters-bootstrap", "performance-matters-server-side", "performance-matters-checklist"]
+		"label": "Performance Matters",
+		"description": "Description about the subject",
+		"repos": ["performance-matters-bootstrap", "performance-matters-server-side", "performance-matters-checklist"],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "bt",
-		"repos": ["browser-technologies"]
+		"label": "Browser Technologies",
+		"description": "Description about the subject",
+		"repos": ["browser-technologies"],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "rtw",
-		"repos": ["real-time-web", "real-time-web-project"]
+		"label": "Real Time Web",
+		"description": "Description about the subject",
+		"repos": ["real-time-web", "real-time-web-project"],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "wd",
-		"repos": ["web-design"]
+		"label": "Web Design",
+		"description": "Description about the subject",
+		"repos": ["web-design"],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "pw1",
-		"repos": ["project1-quick-hack-prototype"]
+		"label": "Project 1",
+		"description": "Description about the subject",
+		"repos": ["project1-quick-hack-prototype"],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "pw2",
-		"repos": []
+		"label": "Project 2",
+		"description": "Description about the subject",
+		"repos": [],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "pw3",
-		"repos": []
+		"label": "Project 3",
+		"description": "Description about the subject",
+		"repos": [],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "wn",
-		"repos": []
+		"label": "Weekly Nerd",
+		"description": "Description about the subject",
+		"repos": [],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	},
 	{
 		"id": "mp",
-		"repos": []
+		"label": "Web app from scratch",
+		"description": "Description about the subject",
+		"repos": [],
+		"goals": [
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			},
+			{
+				"short": "Goal in short",
+				"description": "A longer description about the idea behind this goal"
+			}
+		],
+		"resources" : [
+			{
+				"name": "Presentation",
+				"url": "http://givefileto.me/",
+				"type": "presentation"
+			},
+			{
+				"name": "Read this",
+				"url": "http://givefileto.me/",
+				"type": "article"
+			},
+			{
+				"name": "Download stuff",
+				"url": "http://givefileto.me/",
+				"type": "other"
+			}
+		]
 	}
 ]

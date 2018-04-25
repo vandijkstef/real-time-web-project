@@ -55,7 +55,6 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index'));
 app.use('/repo', require('./routes/repos'));
 app.use('/login', require('./routes/login'));
-app.use('/class', require('./routes/class'));
 app.use('/profile', require('./routes/profile'));
 
 // catch 404 and forward to error handler

@@ -9,21 +9,24 @@ class ForkStore extends MongoStore {
 	}
 
 	GetAll(dataRepo, callback) {
-		super.GetAll({repo: dataRepo.id}, (dataForks) => {
+		super.GetAll({repo: dataRepo._id}, (dataForks) => {
 			if (dataForks.length === 0) {
 				const gitAPI = new GitAPI();
 				gitAPI.GetAllForks(dataRepo.urls.forks, (gitForks) => {
+					console.log(dataRepo.urls.forks);
 					async.forEach(gitForks, (gitFork, callback) => {
 						this.Store(dataRepo, gitFork, () => {
 							callback();
 						});
 					}, () => {
-						super.GetAll({parent: dataRepo.id}, (dataForks) => {
+						super.GetAll({parent: dataRepo._id}, (dataForks) => {
+							console.log(dataForks);
 							callback(dataForks, 'new');
 						});
 					});
 				});
 			} else {
+				console.log(dataForks);
 				callback(dataForks, 'not modified');
 			}
 		});
