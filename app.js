@@ -6,7 +6,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const cookieParser = require('cookie-parser');
-// const sassMiddleware = require('node-sass-middleware');
+const sassMiddleware = require('node-sass-middleware');
 
 const mongUrl = `mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASS}@ds155699.mlab.com:55699/${process.env.MONGODB}`;
 
@@ -19,12 +19,12 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(sassMiddleware({
-// 	src: path.join(__dirname, 'public'),
-// 	dest: path.join(__dirname, 'public'),
-// 	indentedSyntax: false, // true = .sass and false = .scss
-// 	sourceMap: false
-// }));
+app.use(sassMiddleware({
+	src: path.join(__dirname, 'public'),
+	dest: path.join(__dirname, 'public'),
+	indentedSyntax: false, // true = .sass and false = .scss
+	sourceMap: false
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
