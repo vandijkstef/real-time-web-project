@@ -11,15 +11,18 @@
 		<% for (let i = 0; i < classes.length; i++) { %>
 			<section>
 				<h2><a href="/repo/<%- classes[i].id %>"><%- classes[i].label %></a></h2>
+				<% if (!locals.user) { %>
+					<p><%- classes[i].description %></p>
+				<% } %>
+				<section class="goals">
+					<h3>Leerdoelen</h3>
+					<ul>
+					<% for (let j = 0; j < classes[i].goals.length; j++) { %>
+						<li><%- classes[i].goals[j].short %></li>
+					<% } %>
+					</ul>
+				</section>
 				<% if (locals.user) { %>
-					<section class="goals">
-						<h3>Leerdoelen</h3>
-						<ul>
-						<% for (let j = 0; j < classes[i].goals.length; j++) { %>
-							<li><%- classes[i].goals[j].short %></li>
-						<% } %>
-						</ul>
-					</section>
 					<section class="resources">
 						<h3>Bronnen</h3>
 						<ul>
@@ -28,12 +31,9 @@
 						<% } %>
 						</ul>
 					</section>
-				<% } else { %>
-					<p><%- classes[i].description %></p>
 				<% } %>
 			</section>
 		<% } %>
-
 	<% } %>
 	</main>
 	<%- include _userside %>

@@ -3,20 +3,23 @@
 	<%- include _sidebar %>
 	<main>
 		<h1><%- subject.label %></h1>
-		<p><%- subject.description %></p>
-		<% if (subject.goals) { %>
-			<ul>
-			<% for (let i = 0; i < subject.goals.length; i++) { %>
-				<li><%- subject.goals[i].short %></li>
+		<% if (locals.user) { %>
+			<p><%- subject.description %></p>
+			<% if (subject.goals) { %>
+				<ul>
+				<% for (let i = 0; i < subject.goals.length; i++) { %>
+					<li><%- subject.goals[i].short %></li>
+				<% } %>
+				</ul>
 			<% } %>
-			</ul>
-		<% } %>
-		<% if (subject.resources) { %>
-			<ul>
-			<% for (let i = 0; i < subject.resources.length; i++) { %>
-				<li><%- subject.resources[i].name %></li>
+			
+			<% if (subject.resources) { %>
+				<ul>
+				<% for (let i = 0; i < subject.resources.length; i++) { %>
+					<li><%- subject.resources[i].name %></li>
+				<% } %>
+				</ul>
 			<% } %>
-			</ul>
 		<% } %>
 	</main>
 	<%- include _userside %>

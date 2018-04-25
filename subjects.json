@@ -2,20 +2,20 @@
 	{
 		"id": "wafs",
 		"label": "Web app from scratch",
-		"description": "Omschrijving van het vak",
+		"description": "In dit vak gaan we een web app maken zonder frameworks of onnodige libraries, dus zoveel mogelijk met native HTML, CSS & JavaScript. Het eindproduct is een modulair opgezet prototype voor een single page web app. Data wordt opgehaald uit een externe API, waar nodig gemanipuleerd en vervolgens getoond in de Web App. Je leert hoe je structuur aanbrengt in je code en hoe je hiermee 'from scratch' een (prototype voor een) web app maakt. Met deze kennis begrijp je daarnaast beter hoe bestaande api’s, libraries en frameworks werken.",
 		"repos": ["web-app-from-scratch"],
 		"goals": [
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "OOP en/of Functional Javascript",
+				"description": "Student kan JavaScript OOP en/of Functional Programming principes toepassen (minimaal object literal pattern)"
 			},
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Javascript API calls",
+				"description": "Student kan met JavaScript data ophalen vanuit een API, manipuleren en tonen in een web app"
 			},
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Javascript interactie",
+				"description": "Student kan met JavaScript interactie toevoegen aan een web app"
 			}
 		],
 		"resources" : [
@@ -39,20 +39,20 @@
 	{
 		"id": "cssttr",
 		"label": "CSS to the rescue",
-		"description": "Omschrijving van het vak",
+		"description": "In dit vak gaan we aan de slag met CSS. We gaan goed werkende, plezierige responsive oplossingen bedenken én maken voor complexe interfaces. Dat is erg belangrijk, te veel ontwerpers kunnen dit niet zo goed. Het is ook belangrijk om een aantal basisprincipes achter CSS goed te begrijpen. Niet alleen op praktisch niveau, ook op experimenteel niveau. Zonder goed begrip van de basisprincipes is CSS magisch en weird. Met een goed begrip heb je CSS onder controle en kan je het laten doen wat jij wil. En dat is nodig om webpagina’s vorm te geven met attention to detail. Webpagina’s waar mensen blij van worden.",
 		"repos": ["css-to-the-rescue"],
 		"goals": [
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Pleasureable en Responsive",
+				"description": "De student kan een goed werkende responsive oplossing bedenken en maken voor complexe interfaces. De student kan een pleasurable interface maken voor verschillende behoeftes"
 			},
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "CSS Basisprincipes",
+				"description": "De student begrijpt een aantal basisprincipes achter CSS en kan ze op praktisch én experimenteel niveau toepassen. De student kan een pleasurable interface maken voor verschillende behoeftes"
 			},
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Attention to detail en progressive enhancement",
+				"description": "De student kan een webpagina met attention to detail vormgeven volgens de principes van progressive enhancement."
 			}
 		],
 		"resources" : [
@@ -76,20 +76,32 @@
 	{
 		"id": "pm",
 		"label": "Performance Matters",
-		"description": "Omschrijving van het vak",
+		"description": "In deze drie weken gaan we van bestaande web applicaties de performance verbeteren. We werken aan HTML, CSS en JavaScript optimalistaties en hoe we het HTTP protocol beter kunnen benutten.",
 		"repos": ["performance-matters-bootstrap", "performance-matters-server-side", "performance-matters-checklist"],
 		"goals": [
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Critical Rendering en Perceived performance",
+				"description": "De student begrijpt de termen critical rendering path en perceived performance"
 			},
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Performance audits",
+				"description": "De student kan verschillende tools inzetten om de performance van web apps te meten, en om optimalisaties te documenteren."
 			},
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Code optimalisaties tbv performance",
+				"description": "De student kan op code niveau optimalisaties doen tbv een betere performance van web apps"
+			},
+			{
+				"short": "Server-side vs Client-side rendering",
+				"description": "De student begrijpt het verschil tussen server side en client side rendering en wat het effect is op de performance van web apps, als deze worden gecombineerd"
+			},
+			{
+				"short": "Task manager tbv performance",
+				"description": "De student kan een task manager inzetten tbv een betere performance van web apps"
+			},
+			{
+				"short": "Service worker tbv performance",
+				"description": "De student kan een service worker inzetten tbv een betere performance van web apps"
 			}
 		],
 		"resources" : [
@@ -113,20 +125,20 @@
 	{
 		"id": "bt",
 		"label": "Browser Technologies",
-		"description": "Omschrijving van het vak",
+		"description": "In het vak Browser Technologies leer je hoe je goede, robuuste, toegankelijke websites maakt. Je gaat leren over Progressive Enhancement, Feature Detection en Fallback. Het web is er voor iedereen. In dit vak leer je hoe je daarvoor kan zorgen.",
 		"repos": ["browser-technologies"],
 		"goals": [
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Progressive enhancement",
+				"description": "Het web is voor iedereen. Leren over Progressive enhancement"
 			},
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Feature detection",
+				"description": "Wat laat je zien als een browser of gebruiker 'enhancement' niet kan tonen of zien? Hoe doe je Feature Detection en wat doe je als een techniek niet werkt?"
 			},
 			{
-				"short": "Leerdoel in het kort",
-				"description": "Een langere beschrijving van het leerdoel"
+				"short": "Enhanced implementeren",
+				"description": "Browser Technologies onderzoeken en implementeren als enhancement. Basic functionaliteit van een use case doorgronden."
 			}
 		],
 		"resources" : [
