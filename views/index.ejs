@@ -2,17 +2,22 @@
 <% if (!locals.user) { %>
 	<header class="home">
 		<h1>CMDA Web Minor</h1>
-		<p>Hello! We are Communication and Multimedia Design (CMD) in Amsterdam. This site acts as a portal for student projects created during the web development minor. Everyone is free to browse our archive, students are able to login and find additional info.</p>
+		<p>Hoi! Wij zijn Communication &amp; Multimedia Design (CMD) in Amsterdam. Deze website is een portaal voor studentenproject gemaakt tijdens de minor 'Web'. U kunt hier het gemaakte werk bekijken in het archief. Studenten kunnen inloggen en meer informatie vinden over de vakken.</p>
+	</header>
+<% } else { %>
+	<header class="home">
+		<h1>CMDA Web Minor</h1>
+		<p>Je bent ingelogd als <%- user.systemName %></p>
 	</header>
 <% } %>
 <div class="rotatedNav">
 	<nav class="index">
 		<% if (locals.user) { %>
-			<a href="/class">Class</a>
-			<a href="/profile">Profile</a>
+			<a href="/repo">Klas</a>
+			<a href="/profile">Profiel</a>
 		<% } else { %>
-			<a href="/repo">Archive</a>
-			<a href="/login">Login</a>
+			<a href="/repo">Archief</a>
+			<a href="/login">Log in</a>
 		<% } %>
 	</nav>
 </div>

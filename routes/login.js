@@ -59,7 +59,7 @@ router.get('/oauth', (req, res) => {
 				} else {
 					// Who dis?!
 					req.session.user = null;
-					res.render('login', { title: 'NOT Logged in', clientID: process.env.GITOAUTHCLIENT, error: 'Did you already fork and commit in this organisation?'});
+					res.render('login', { title: 'Niet ingelogd', clientID: process.env.GITOAUTHCLIENT, error: 'Heb je al geforkt en gecommit in deze organisatie?'});
 				}
 			});
 		});

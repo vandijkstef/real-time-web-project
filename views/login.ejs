@@ -2,10 +2,11 @@
 <div class="flex">
 	<%- include _sidebar %>
 	<main>
+		<p>Als je hier bent, is er iets goed misgegaan</p>
 		<% if (locals.user) { %>
-			<p>logged in as <%- user.name %></p>
+			<p>Ingelogd als <%- user.name %></p>
 		<% } else if (locals.clientID) { %>
-			<p>login page</p>
+			<p>Login pagina</p>
 			<a href="https://github.com/login/oauth/authorize?client_id=<%- clientID %>&allow_signup=false">Login with Github</a>
 		<% } %>
 		<% if (locals.error) { %>

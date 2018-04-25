@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
 	if (!req.session.user) {
 		res.redirect('/');
 	} else {
-		res.render('profile', { title: 'Profile', profile: req.session.user, yours: true });
+		res.render('profile', { title: 'Jouw profiel', profile: req.session.user, yours: true });
 	}
 });
 
@@ -22,7 +22,7 @@ router.get('/:id', function(req, res) {
 		userStore.Get(req.params.id, (profileUser) => {
 			const chatStore = new ChatStore();
 			chatStore.GetConversation(req.session.user._id, profileUser._id, (chatData) => {
-				res.render('profile', { title: 'Profile', profile: profileUser, chat: chatData });
+				res.render('profile', { title: 'Profiel van ' + (profileUser.niceName || profileUser.systemName) , profile: profileUser, chat: chatData });
 			});
 		});
 	}

@@ -9,10 +9,10 @@ router.get('/', (req, res) => {
 	// class details
 	const data = {};
 	if (req.session.user) {
-		data.title = 'Classes';
+		data.title = 'Klas';
 
 	} else {
-		data.title = 'Archive';
+		data.title = 'Archief';
 	}
 	data.classes = subjects;
 	res.render('repos', data);
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 // Detail/class page - show all repos and forks - class details for users
 router.get('/:class', (req, res) => {
 	const data = {};
-	data.title = 'Class';
+	data.title = 'Klas';
 	const subject = subjects.find((subject) => {return subject.id === req.params.class;});
 
 	if (!subject) {

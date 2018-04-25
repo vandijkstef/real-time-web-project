@@ -2,35 +2,35 @@
 	{
 		"id": "wafs",
 		"label": "Web app from scratch",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": ["web-app-from-scratch"],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -39,35 +39,35 @@
 	{
 		"id": "cssttr",
 		"label": "CSS to the rescue",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": ["css-to-the-rescue"],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -76,35 +76,35 @@
 	{
 		"id": "pm",
 		"label": "Performance Matters",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": ["performance-matters-bootstrap", "performance-matters-server-side", "performance-matters-checklist"],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -113,35 +113,35 @@
 	{
 		"id": "bt",
 		"label": "Browser Technologies",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": ["browser-technologies"],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -150,35 +150,35 @@
 	{
 		"id": "rtw",
 		"label": "Real Time Web",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": ["real-time-web", "real-time-web-project"],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -187,35 +187,35 @@
 	{
 		"id": "wd",
 		"label": "Web Design",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": ["web-design"],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -224,35 +224,35 @@
 	{
 		"id": "pw1",
 		"label": "Project 1",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": ["project1-quick-hack-prototype"],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -261,35 +261,35 @@
 	{
 		"id": "pw2",
 		"label": "Project 2",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": [],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -298,35 +298,35 @@
 	{
 		"id": "pw3",
 		"label": "Project 3",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": [],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -335,35 +335,35 @@
 	{
 		"id": "wn",
 		"label": "Weekly Nerd",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": [],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}
@@ -372,35 +372,35 @@
 	{
 		"id": "mp",
 		"label": "Web app from scratch",
-		"description": "Description about the subject",
+		"description": "Omschrijving van het vak",
 		"repos": [],
 		"goals": [
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			},
 			{
-				"short": "Goal in short",
-				"description": "A longer description about the idea behind this goal"
+				"short": "Leerdoel in het kort",
+				"description": "Een langere beschrijving van het leerdoel"
 			}
 		],
 		"resources" : [
 			{
-				"name": "Presentation",
+				"name": "Presentatie",
 				"url": "http://givefileto.me/",
 				"type": "presentation"
 			},
 			{
-				"name": "Read this",
+				"name": "Lees dit",
 				"url": "http://givefileto.me/",
 				"type": "article"
 			},
 			{
-				"name": "Download stuff",
+				"name": "Download dingen",
 				"url": "http://givefileto.me/",
 				"type": "other"
 			}

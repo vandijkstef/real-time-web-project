@@ -154,7 +154,7 @@ Notes Random:
 - Then I can build a users page
 - I guess I wanna run some API calls on startup so we get users, even on a clear database
 - Wait, UserStore.FetchAll should fix that
-	- Oh, we might not wanna return sensitive data to the template engine
+	- Oh, we might not wanna return sensitive data to the template engine, altough it really doesn't care that much
 
 Forks... Do I append them to the repo, or make their own table for it?
 When I append them, its one big data blob

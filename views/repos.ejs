@@ -2,21 +2,32 @@
 <div class="flex">
 	<%- include _sidebar %>
 	<main class="repos">
+	<% if (locals.user) { %>	
+		<h1>Vakken</h1>
+	<% } else { %>
+		<h1>Archief</h1>
+	<% } %>
 	<% if (locals.classes) { %>
 		<% for (let i = 0; i < classes.length; i++) { %>
 			<section>
 				<h2><a href="/repo/<%- classes[i].id %>"><%- classes[i].label %></a></h2>
 				<% if (locals.user) { %>
-					<ul>
-					<% for (let j = 0; j < classes[i].goals.length; j++) { %>
-						<li><%- classes[i].goals[j].short %></li>
-					<% } %>
-					</ul>
-					<ul>
-					<% for (let j = 0; j < classes[i].resources.length; j++) { %>
-						<li><%- classes[i].resources[j].name %></li>
-					<% } %>
-					</ul>
+					<section class="goals">
+						<h3>Leerdoelen</h3>
+						<ul>
+						<% for (let j = 0; j < classes[i].goals.length; j++) { %>
+							<li><%- classes[i].goals[j].short %></li>
+						<% } %>
+						</ul>
+					</section>
+					<section class="resources">
+						<h3>Bronnen</h3>
+						<ul>
+						<% for (let j = 0; j < classes[i].resources.length; j++) { %>
+							<li><%- classes[i].resources[j].name %></li>
+						<% } %>
+						</ul>
+					</section>
 				<% } else { %>
 					<p><%- classes[i].description %></p>
 				<% } %>
