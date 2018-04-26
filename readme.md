@@ -66,7 +66,7 @@ Status: ✔️
 Description: View all repositories within an organisation. The functionality is limited, since the repo's are merely a reference to the forks the students are using
 
 ### 🔎 Repo forks explorer
-Status: ❌  
+Status: ✔️  
 Description: Explore the forks within the found repositories, showing some basic information about them.
 
 ### 💯 Awesome relevant data and numbers
@@ -120,10 +120,13 @@ Requested from Github:
 - Users on those forks
 	- name, description, urls, avatar
 
+## Server requests
+![Server request](./doc/rtw-project-overview.png)
+
 ## Server Caching (DB)
 Data fetched from API's is cached on the server using MongoDB. Any data request within the system will first try to fetch that from the database. In the case the data doesn't exsist, or is invalid due to cache timeout, a (new) request to the API is made. That data is first stored, then fetched again from the database.
 ![Data request](./doc/data-request.JPG)
-To reduce the amount of requests that are delayed by external API's, the system will periodically fake those requests using `./scripts/tick.js`.
+To reduce the amount of requests that are delayed by external API's, the system will periodically fake those requests using `./scripts/tick.js`. (Currently disabled)
 
 ## Contributing
 Currently, no contributions are accepted. However, you are free to fork the project and build on it.
@@ -135,13 +138,10 @@ This project is copyleft, all wrongs reversed. Have fun! *Note: This might not b
 ## Acknowledgments
 * ☕️️️️☕️️️️️️️️️☕️️️️️️️️️
 
-<!-- * Create a "live" web app which reflects changes to the back-end data model in reactive front-end views, using real-time, event-based, messaging technologies like sockets or server-sent-events. -->
-<!-- * Describe their work in a professional readme with insightful diagrams showing the life cycle of their data. -->
-
 ---
 
 
-Notes Random:
+<!-- Notes Random:
 - Keep track of api calls in DB, so we can decide if we wanna do deep calls or not
 
 - Test if my update method actually updates and doesn't remove extra set variables
@@ -211,4 +211,4 @@ For the class page: What If I show:
 			
 		
 		- Detail page - moodle-like - also shows all forks
-	
+	 -->

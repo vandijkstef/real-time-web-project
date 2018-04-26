@@ -8,7 +8,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const sassMiddleware = require('node-sass-middleware');
 
-const mongUrl = `mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASS}@ds155699.mlab.com:55699/${process.env.MONGODB}`;
+const mongUrl = `mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASS}@ds159489.mlab.com:59489/${process.env.MONGODB}`;
 
 const app = express();
 
