@@ -79,12 +79,19 @@ a {
 		display: flex;
 		flex-direction: column;
 		margin-top: .2rem;
+		&.uioffline {
+			.status {
+				color: rgba(black, .5) !important;
+				opacity: .5;
+			}
+		}
 	}
 	li {
 		// margin-bottom: .2rem;
 		// display: flex;
 		// justify-content: baseline;
 		.status {
+			transition: opacity $trans;
 			font-size: 3em;
 			margin: -0.2em 0;
 			// margin-right: .2em;
@@ -95,6 +102,7 @@ a {
 			}
 		}
 		&.online {
+			order: -1;
 			.status {
 				color: green;
 			}
@@ -155,6 +163,9 @@ header {
 		overflow-y: scroll;
 		background-color: darken($white, 5);
 		box-shadow: 0 0 .5em inset $black;
+		&.uioffline {
+			background-color: darken($white, 20);
+		}
 		li {
 			font-size: 1.4em;
 			padding: .5em 0;
@@ -170,11 +181,21 @@ header {
 		input {
 			font-size: 1.2em;
 			width: 100%;
+			&[type=text].uioffline {
+				background-color: darken($white, 10);
+			}
 		}
 	}
 }
 
-// .repos {
-// 	color: $yellow;
-// }
+p.offlinemsg {
+	display: none;
+}
+
+.uioffline {
+	+ p.offlinemsg {
+		display: block;
+	}
+}
+
 

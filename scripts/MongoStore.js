@@ -64,6 +64,11 @@ class MongoStore {
 			});
 		});
 	}
+
+	Validate(data) {
+		// TODO life of data, return true if we want to refresh
+		return false;
+	} 
 }
 
 module.exports = MongoStore;

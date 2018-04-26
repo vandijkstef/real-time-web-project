@@ -10,23 +10,23 @@ class ForkStore extends MongoStore {
 
 	GetAll(dataRepo, callback) {
 		super.GetAll({repo: dataRepo._id}, (dataForks) => {
-			if (dataForks.length === 0) {
+			if (dataForks.length === 0 || super.Validate(dataForks)) {
 				const gitAPI = new GitAPI();
 				gitAPI.GetAllForks(dataRepo.urls.forks, (gitForks) => {
-					console.log(dataRepo.urls.forks);
+					// console.log(dataRepo.urls.forks);
 					async.forEach(gitForks, (gitFork, callback) => {
 						this.Store(dataRepo, gitFork, () => {
 							callback();
 						});
 					}, () => {
 						super.GetAll({parent: dataRepo._id}, (dataForks) => {
-							console.log(dataForks);
+							// console.log(dataForks);
 							callback(dataForks, 'new');
 						});
 					});
 				});
 			} else {
-				console.log(dataForks);
+				// console.log(dataForks);
 				callback(dataForks, 'not modified');
 			}
 		});
@@ -40,7 +40,7 @@ class ForkStore extends MongoStore {
 				_id: gitFork.id,
 				repo: dataRepo._id,
 				owner: dataUser._id,
-				ownerName: dataUser.name,
+				ownerName: dataUser.niceName || dataUser.systemName,
 				urls: {
 					html: gitFork.html_url,
 					contributors: gitFork.contributors_url

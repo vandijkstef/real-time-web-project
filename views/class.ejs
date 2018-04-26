@@ -21,6 +21,18 @@
 				</ul>
 			<% } %>
 		<% } %>
+		<% if (locals.repoData) { %>
+			<h2>Repositories/Forks</h2>
+			<% for (let i = 0; i < repoData.length; i++) { %>
+				<h3><%- repoData[i].repo.name %></h3>
+				<ul>
+				<% for (let j = 0; j < repoData[i].forks.length; j++) { %>
+					<li><a href="<%- repoData[i].forks[j].urls.html %>"><%- repoData[i].forks[j].ownerName %></a></li>
+				<% } %>
+				</ul>
+			<% } %>
+		<% } %>
+		
 	</main>
 	<%- include _userside %>
 </div>

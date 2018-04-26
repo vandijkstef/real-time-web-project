@@ -113,6 +113,7 @@ const InitUI = () => {
 
 // Update the UI based on all wsData received
 const UpdateUI = (wsData) => {
+	UIOnline();
 	UpdateUserList(wsData);
 };
 
@@ -159,10 +160,41 @@ const HandleIncomingMessage = (msgData) => {
 
 // Set UI to offline, try to reconnect
 const UIOffline = () => {
-	console.warn('WS Offline, retrying: Do some front-end stuff will ya?');
+	if (elements.userList) {
+		elements.userList.classList.add('uioffline');
+	}
+	if (!elements.chatInput) {
+		elements.chatInput = document.querySelector('input[name=message]');
+	}
+	if (!elements.chatUl) {
+		elements.chatUl = document.querySelector('#chat ul');
+	}
+	if (!elements.chatSubmit) {
+		elements.chatSubmit = document.querySelector('#chat input[type=submit]');
+	}
+	if (elements.chatInput) {
+		elements.chatInput.classList.add('uioffline');
+	}
+	if (elements.chatUl) {
+		elements.chatUl.classList.add('uioffline');
+	}
+	if (elements.chatSubmit) {
+		elements.chatSubmit.classList.add('uioffline');
+		elements.chatSubmit.disabled = true;
+	}
 	setTimeout(() => {
 		Socket();
 	}, 5000);
+};
+
+const UIOnline = () => {
+	const offlineElements = document.querySelectorAll('.uioffline');
+	if (elements.chatSubmit) {
+		elements.chatSubmit.disabled = false;
+	}
+	offlineElements.forEach((element) => {
+		element.classList.remove('uioffline');
+	});
 };
 
 document.addEventListener('DOMContentLoaded', () => {
