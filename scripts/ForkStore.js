@@ -32,6 +32,12 @@ class ForkStore extends MongoStore {
 		});
 	}
 
+	GetFromUser(userID, callback) {
+		super.GetAll({owner: userID}, (dataForks) => {
+			callback(dataForks, 'not modified');
+		});
+	}
+
 	Store(dataRepo, gitFork, callback) {
 		const user = gitFork.owner;
 		const userStore = new UserStore();
@@ -39,6 +45,7 @@ class ForkStore extends MongoStore {
 			const data = {
 				_id: gitFork.id,
 				repo: dataRepo._id,
+				repoName: dataRepo.name,
 				owner: dataUser._id,
 				ownerName: dataUser.niceName || dataUser.systemName,
 				urls: {

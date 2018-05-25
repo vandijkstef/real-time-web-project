@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 		data.title = 'Klas';
 
 	} else {
-		data.title = 'Archief';
+		data.title = 'Minor';
 	}
 	data.classes = subjects;
 	res.render('repos', data);
@@ -55,6 +55,7 @@ router.get('/:class', (req, res) => {
 					callback();
 				});
 			}, () => {
+				console.log(data.repoData);
 				res.render('class', data);
 			});
 		});	

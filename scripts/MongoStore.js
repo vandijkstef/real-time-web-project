@@ -1,6 +1,6 @@
 const mongo = require('mongodb');
 const mongoClient = mongo.MongoClient;
-const mongUrl = `mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASS}@ds159489.mlab.com:59489/${process.env.MONGODB}`;
+const mongUrl = `mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASS}@34.243.17.210:59489/${process.env.MONGODB}`;
 
 // Mongo base class to actually interact with the DB
 class MongoStore {

@@ -28,7 +28,11 @@
 				</form>
 			</section>
 		<% } %>
-
+		<% for (let i = 0; i < repoData.length; i++) { %>
+			<ul>
+				<li><a href="<%- repoData[i].urls.html %>"><%- repoData[i].repoName %></a></li>
+			</ul>
+		<% } %>
 	</main>
 	<%- include _userside %>
 </div>

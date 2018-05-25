@@ -3,8 +3,8 @@
 	<%- include _sidebar %>
 	<main>
 		<h1><%- subject.label %></h1>
+		<p><%- subject.description %></p>
 		<% if (locals.user) { %>
-			<p><%- subject.description %></p>
 			<% if (subject.goals) { %>
 				<ul>
 				<% for (let i = 0; i < subject.goals.length; i++) { %>
@@ -14,23 +14,39 @@
 			<% } %>
 			
 			<% if (subject.resources) { %>
-				<ul>
+				<ul class="resources">
 				<% for (let i = 0; i < subject.resources.length; i++) { %>
-					<li><%- subject.resources[i].name %></li>
+					<li class="<%- subject.resources[i].type %>"><a href="<%- subject.resources[i].url %>"><%- subject.resources[i].name %></a></li>
 				<% } %>
 				</ul>
 			<% } %>
 		<% } %>
 		<% if (locals.repoData) { %>
 			<h2>Repositories/Forks</h2>
-			<% for (let i = 0; i < repoData.length; i++) { %>
-				<h3><%- repoData[i].repo.name %></h3>
-				<ul>
-				<% for (let j = 0; j < repoData[i].forks.length; j++) { %>
-					<li><a href="<%- repoData[i].forks[j].urls.html %>"><%- repoData[i].forks[j].ownerName %></a></li>
+			<% if (!locals.user) { %>
+				<p>Dit zijn de repositories met het gemaakte werk van de studenten. In veel gevallen is op deze pagina te lezen hoe u de projecten kunt bekijken.</p>
+				<section class="repoblocks">
+				<% for (let i = 0; i < repoData.length; i++) { %>
+					<% for (let j = 0; j < repoData[i].forks.length; j++) { %>
+						<div>
+							<a href="<%- repoData[i].forks[j].urls.html %>"><%- repoData[i].forks[j].ownerName %></a>
+						</div>
+					<% } %>
 				<% } %>
-				</ul>
+				</section>
 			<% } %>
+			<% if (locals.user) { %>
+				<% for (let i = 0; i < repoData.length; i++) { %>
+					<ul>
+					<% for (let j = 0; j < repoData[i].forks.length; j++) { %>
+						<li><a href="<%- repoData[i].forks[j].urls.html %>"><%- repoData[i].forks[j].ownerName %></a></li>
+					<% } %>
+					</ul>
+				<% } %>
+			<% } %>
+		<% } %>
+		<% if (repoData.length == 0) { %>
+			<p>De projecten worden nog geindexeerd, probeer de pagina te verversen.</p>
 		<% } %>
 		
 	</main>

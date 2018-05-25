@@ -5,15 +5,15 @@
 	<% if (locals.user) { %>	
 		<h1>Vakken</h1>
 	<% } else { %>
-		<h1>Archief</h1>
+		<h1>Overzicht Minor</h1>
+		<p>Computerprogramma’s en interactieve toepassingen verplaatsen zich meer en meer naar de browser van de gebruiker. De gebruikte webtechnologieën worden steeds vaker voor alledaagse ‘dingen’ gebruikt, in en rond het huis, voor medische toepassingen, rollende robots, fietssloten en hardloopschoenen. In de minor Web Development leren studenten toepassingen maken met behulp van deze webtechnologieën.</p>
+		<p>We gaan met vooruitstrevende webtechnologieën leren goede (web) producten te maken. Samen met bedrijven verkennen we de grenzen van wat er mogelijk is.</p>
+		<h2>Vakken</h2>
 	<% } %>
 	<% if (locals.classes) { %>
 		<% for (let i = 0; i < classes.length; i++) { %>
 			<section>
 				<h2><a href="/repo/<%- classes[i].id %>"><%- classes[i].label %></a></h2>
-				<% if (!locals.user) { %>
-					<p><%- classes[i].description %></p>
-				<% } %>
 				<section class="goals">
 					<h3>Leerdoelen</h3>
 					<ul>
@@ -27,10 +27,15 @@
 						<h3>Bronnen</h3>
 						<ul>
 						<% for (let j = 0; j < classes[i].resources.length; j++) { %>
-							<li><%- classes[i].resources[j].name %></li>
+							<li class="<%- classes[i].resources[j].type %>"><a href="<%- classes[i].resources[j].url %>"><%- classes[i].resources[j].name %></a></li>
 						<% } %>
 						</ul>
 					</section>
+				<% } %>
+				<% if (locals.user) { %>
+					<div class="readmore"><a  href="/repo/<%- classes[i].id %>">Vakdetails <span class="visuallyhidden"><%- classes[i].label %></span></a></div>
+				<% } else { %>
+					<div class="readmore"><a  href="/repo/<%- classes[i].id %>">Bekijk studentenwerk <span class="visuallyhidden"><%- classes[i].label %></span></a></div>
 				<% } %>
 			</section>
 		<% } %>
