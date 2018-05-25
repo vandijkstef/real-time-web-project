@@ -213,9 +213,3 @@ For the class page: What If I show:
 		- Detail page - moodle-like - also shows all forks
 	 -->
 
-
-TODO:
-- Provide overview of minor on /repo (table thingy?)
-- Ingelogd:
-	- je eigen repos op je profiel?
-
